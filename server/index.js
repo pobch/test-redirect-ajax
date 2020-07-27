@@ -13,8 +13,10 @@ app.get('/', (req, res) => {
 })
 
 app.get('/redirect', (req, res) => {
-  res.redirect('/')
+  res.redirect('/login')
 })
+
+app.use('/login', express.static('login'))
 
 app.listen(4000, () => {
   console.log('listening on port 4000')
